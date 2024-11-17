@@ -1,0 +1,1 @@
+https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb#scrollTo=DL5sMSZ9L9eq
