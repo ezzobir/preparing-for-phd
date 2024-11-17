@@ -1,0 +1,58 @@
+\documentclass[a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%pour la gestion de francais et les accents
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage[french]{babel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\newtheorem{montheorem}{Th\'eor\` eme}[section]
+\newtheorem{madef}{D\'efinition}[section]
+\newtheorem{monexemple}{Exemple}[section]
+\def\dfrac{\displaystyle\frac}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\noindent
+\bf  {Module: ( TP Informatique: LATEX  )\qquad\qquad    2020}\\
+\bf {Master 1,\ Math\'ematiques Appliqu\'ees}\\
+\begin{center}
+\bf {TP 3: Sections, th\'eor\`emes}
+\end{center}
+R\'ediger en \large {LATEX}\\
+\noindent
+\section{Fonctions holomorphes }
+ \begin{madef}
+ Soit $ U \subset C$
+ un ouvert.
+ On dit que $f:U \rightarrow C$ est
+ \textbf{holomorphe (ou analytique complexe)} dans $U$ si $f$ est d\'erivable $\forall z_0 \in U$, c'est \`a dire que
+ $$
+ \lim_{z\rightarrow z_0}\frac{f(z)-f(z_0)}{z-z_0}
+ $$
+ existe et est finie. On note la d\'eriv\'ee par $f^\prime(z_0)$.
+ \end{madef}
+
+ \section{Equations de Cauchy-Riemann}
+ \begin{montheorem}
+ Soient $U \subset C$ un ouvert et $f:U \rightarrow C$ telle que, si $z=x+iy$,
+ $$
+ u(x,y)=Re f(x+iy), \ \ \ \ v(x,y)=Im f(x+iy)
+ $$
+ Alors les deux assertions suivantes sont \'equivalentes:\\
+ \textbf{i)} $f$ est holomorphes dans $U$,\\
+ \textbf{ii)} les fonctions $u,v \in C^1(U)$ et satisfont, $ \forall (x,y)\in U$, \textbf{les \'equations de Cauchy-Riemann}
+
+ $$
+ \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}
+ $$
+En particulier, si $f$ est holomorphe dans $U$, alors
+$$
+f^\prime(z)=\frac{\partial u}{\partial x}(x,y)+i\frac{\partial v}{\partial x}(x,y)=\frac{\partial v}{\partial y}(x,y)-i\frac{\partial u}{\partial y}(x,y)
+$$
+\end{montheorem}
+\begin{monexemple}
+La fonction $\sin z=\dfrac{e^{iz}-e^{-iz}}{2i}$ est holomorphe dans $C$ et sa d\'eriv\'ee est $\cos z=\dfrac{e^{iz}+e^{-iz}}{2}$
+\end{monexemple}
+
+\end{document} 

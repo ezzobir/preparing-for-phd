@@ -1,0 +1,77 @@
+\documentstyle[12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input texinput/a42.tex
+%\input texinput/amatharti.tex
+%\input texinput/mac.tex
+\pagestyle{myheadings} \markboth{}{}
+
+\def\dfrac{\displaystyle\frac}
+\def\dint{\displaystyle\int}
+\def\dsum{\displaystyle\sum}
+\def\text{\hbox}
+\def\iint{\int\!\!\int}
+\begin{document}
+\noindent
+\bf  {Module: ( TP Informatique: LATEX  )\qquad\qquad    2020}\\
+\bf {Master 1,\ Math\'ematiques Appliqu\'ees}\\
+\begin{center}
+\bf {TP 2: Formules math\'ematiques, tableaux}
+\end{center}
+R\'ediger en \large {LATEX}\\
+\noindent
+\small {\bf Excercice 1.}
+Pour $n$ entier naturel, on pose $u_{0}$ et $u_{n}=u_{n-1}+n$. Alors\\
+\begin{equation}
+\forall n\in {N}^{\star} , u_n=\frac{n(n+1)}{2}\geq 0
+\end{equation}
+\noindent
+\small {\bf Excercice 2.}
+La formule de Stirling exprime,  pour $n$ grand, que
+$$
+n! \sim Cn^n\sqrt{n} \ \textrm{exp}(-n),
+$$
+o\`u $C=\sqrt{2\pi}$. Cette constante peut se calculer en utilisant la formule de Wallis,
+que l'on trouve gr\^ace aux int\'egrales \'eponymes :
+$$
+\forall n\in N, I_n=\int_{0}^{\frac{\pi}{2}}(\sin x)^n dx.
+$$
+\noindent
+\small {\bf Excercice 3.}
+La fonction $\Gamma$: $R_{+}^{\star}\rightarrow R$, d\'efinie par
+\begin{equation} \label{equation}
+\Gamma(x)=\int_{0}^{+\infty}t^{x-1}e^{-t}dt
+\end{equation}
+la formule (\ref{equation}) est appel\'ee fonction Gamma (d'Euler), g\'en\'eralise la factorielle.\\
+En effet, $\forall n \in N^{\star}, \Gamma(n+1)=n! $. On peut aussi montrer que
+$$
+\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi},
+$$
+en se ramenant \`a l'in\'egrale de Gauss $I=\int_{0}^{+\infty}e^{-t^2}dt$
+(par changement de variables), cette derni\`ere valant
+$\frac{\sqrt{\pi}}{2}$ (par exemple en consid\'erant le carr\'e de $I$ et un passage en coordonn\'ees polaires).\\
+\small {\bf Excercice 4.}
+Ins\'erer le graphe de la fonction suivante dans un document Latex: \ \
+$$
+f(x)=x+e^x+\frac{10}{1+x^2}-5
+$$
+\noindent
+\small {\bf Excercice 5.}
+\`{A} savoir sur les m\'ethodes de quadratures ( voir le tableau \ref{tabm} )
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+Point milieu        &   1     \\
+\hline
+Trap\`ezes    &   1          \\
+\hline
+Simpson     &    3\\
+\hline
+\end{tabular}
+\caption { m\'ethodes de quadratures \label{tabm}}
+\end{center}
+\end{table}
+
+\end{document}

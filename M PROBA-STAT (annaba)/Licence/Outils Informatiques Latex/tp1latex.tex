@@ -1,0 +1,204 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{fancybox}
+\usepackage{xcolor} 
+\usepackage{amsmath,amssymb}
+\usepackage{pifont}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{re}{Remarque}
+
+\begin{document}
+\author{A.BENYOUCEF}
+\title{Premiers pas avec \LaTeX}
+\begin{center}
+\ovalbox{\LARGE{Environnement math\'ematique}}
+\end{center}
+\shadowbox{1-Les formules math\'ematiques en \LaTeX}\\
+\begin{enumerate}	
+\item Toute formule math\'ematique doit \^etre \'ecrite entre deux $\$\cdots \$$.
+\item Pour centrer une formule math\'ematique on \'ecrit $\$\$\cdots\$\$$.
+\end{enumerate}
+\section{Limites, Int\'egrales, D\'eriv\'ees Sommes et Produit}
+\subsection{Symboles et utilisation}
+\begin{itemize}
+\item\textbf{Limite:} \$\textbackslash lim\$
+\item\textbf{Int\'egrale:} \$\textbackslash int\$
+\item \textbf{D\'eriv\'ee:} \$\textbackslash prime\$, \$\textbackslash partial\$
+\item\textbf{Somme:} \$\textbackslash sum\$
+\item \textbf{Produit:} \$\textbackslash prod\$
+\end{itemize}
+\subsection{Exemples:}
+\begin{minipage}[t]{8cm}	
+\textbf{Code source}\\
+\$\textbackslash lim\_\{x\textbackslash rightarrow 0\}f(x)\$\\
+\$\textbackslash int\_\{0\}\textasciicircum\{1\}f(t)dt\$\\
+\$ f\textbackslash prime\$, \$\textbackslash partial f\$\\
+\$\textbackslash sum\{k=1\}\textasciicircum\{n\}k\textasciicircum2\$\\
+\$\textbackslash prod\_\{k=1\}\textasciicircum\{n\} f(k)\$
+\end{minipage}
+\hspace{0.3cm}
+\begin{minipage}[t]{8cm}
+\textbf{PDF}\\
+$\lim_{x\rightarrow 0}f(x)$\\
+$\int_{0}^{1}f(t)dt$\\
+$f\prime$, $\partial f$\\
+$\sum_{k=1}^{n}k^2$\\
+$\prod_{k=1}^{n} f(k)$
+\end{minipage}	
+\section{Vecteurs, Normes}
+\begin{itemize}
+\item \textbf{ Vecteur:} \$\textbackslash vec\{vecteur\}\$
+\item \textbf{Norme:} \$\textbackslash| .\textbackslash|\$
+\end{itemize}
+\subsection{Exemples:}
+\begin{minipage}[t]{8cm}	
+\textbf{Code source}\\
+\begin{itemize}
+\item \$\textbackslash vec\{u\}\$
+\item \$\textbackslash|u\textbackslash|\$
+\end{itemize}
+\end{minipage}
+\hspace{0.3cm}
+\begin{minipage}[t]{8cm}
+\textbf{PDF}\\
+\begin{itemize}
+\item $\vec{u}$
+\item $\|u\|$
+\end{itemize}
+\end{minipage}
+\section{Les nombres complexes}
+\begin{tabular}{|c|c|c|}
+	\hline Op\'eration & Syntaxe & Compilation\\
+	\hline R\'eel & \$\textbackslash Re(z)\$ & $\Re(z)$\\
+	\hline Imaginaire & \$\textbackslash Im(z) \$ & $\Im(z)$\\
+	\hline Conjugu\'e & \$\textbackslash overline \{z\}\$ & $\overline{z}$\\
+	\hline Module & \$\textbackslash left| z\textbackslash right| \$ & $\left| z \right|$\\
+	\hline
+\end{tabular}
+\section{Parall\`eles et perpondiculaires:}
+ $D\perp D'$ se code \$D\textbackslash perp D'\$\\
+ {43} $D\parallel D'$ se code \$D\textbackslash parallel D'\$
+\section{Probabilit\'es}
+\begin{minipage}[t]{8cm}	
+\textbf{Code source}\\
+\begin{itemize}
+\item\$ A\textbackslash cup B\$
+\item \$ A \textbackslash cap B = \textbackslash emptyset\$
+\item \$ \textbackslash setminus B\$
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{8cm}
+\textbf{PDF}\\
+\begin{itemize}
+\item $A \cup B$
+\item $A \cap B=\emptyset$
+\item $A \setminus B$
+\end{itemize}
+\end{minipage}
+\section{Les ensembles:}
+\begin{tabular}{|c|c|c|}
+\hline L'ensemble & La syntaxe & Compilation\\
+\hline Les nombres r\'eels & \$\textbackslash mathbb\{R\}\$ & $\mathbb{R}$ \\
+\hline Les nombres entiers & \$\textbackslash mathbb\{N\}\$ & $\mathbb{N}$ \\
+\hline Les nombres complexes & \$\textbackslash mathbb\{C\}\$ & $\mathbb{C}$ \\
+\hline
+\end{tabular}
+\section{Symboles math\'ematiques}
+\begin{minipage}[t]{8cm}	
+\textbf{Code source}\\
+\begin{itemize}
+\item \$ \textbackslash leq \$
+\item \$ \textbackslash geq \$
+\item \$ \textbackslash approx \$
+\item \$ \textbackslash equiv \$
+\item \$ \textbackslash neq \$
+\item \$ \textbackslash subset \$
+\item\$ \textbackslash in \$
+\item \$ \textbackslash notin \$
+\item \$ \textbackslash pm \$
+\item \$ \textbackslash times \$
+\item \$ \textbackslash infty \$
+\item \$ \textbackslash forall \$
+\item \$ \textbackslash exists \$
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{8cm}
+\textbf{PDF}\\
+\begin{itemize}
+\item $\leq$
+\item $\geq$
+\item $\approx$
+\item $\equiv$
+\item $\neq$
+\item $\subset$
+\item $\in$
+\item $\notin$
+\item $\pm$
+\item $\times$
+\item $\infty$
+\item $\forall$
+\item $\exists$
+\end{itemize}
+\end{minipage}
+\section{Les fl\`eches}
+\begin{minipage}[t]{8cm}	
+\textbf{Code source}\\
+\begin{itemize}
+\item \$ \textbackslash rightarrow \$
+\item \$ \textbackslash leftarrow \$
+\item \$ \textbackslash iff \$
+\item \$ \textbackslash implies \$
+\item \$ \textbackslash mapsto \$
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{8cm}
+\textbf{PDF}\\
+\begin{itemize}
+\item $\rightarrow$
+\item $\leftarrow$	
+\item $\iff$
+\item $\implies$
+\item $\mapsto$
+\end{itemize}
+\end{minipage}
+\subsection{Principes des commandes g\'en\'erant des fl\`eches}
+\ding{43}Toutes les commandes finissent par le suffixe arrow.\\
+\ding{43}Toutes les commandes commencent par des pr\'efixes qui indiquent la direction
+\textbf{left}(gauche),\textbf{right}(droite), \textbf{up} (haut), \textbf{down} (bas).\\
+ \ding{43}Le pr\'efixe facultatif \textbf{long} donne une fl\`eche longue.\\
+\ding{43}La premi\`ere lettre mise en majuscule rend la fl\`eche double.
+\section{Radicaux, Fraction, Exposant, Indices}
+
+\begin{minipage}[t]{8cm}	
+\textbf{Code source}\\
+\begin{itemize}
+\item \$ \textbackslash sqrt\{x\} \$
+\item \$ \textbackslash frac \{num\}\_\{denom\} \$
+\item \$ \textasciicircum\{exposant\} \$	
+\item \$\_\{indice\} \$
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{8cm}
+\textbf{PDF}\\
+\begin{itemize}
+\item $\sqrt{x}$
+\item $\frac{f(x)}{g(x)}$
+\item $x^{2}$
+\item$ x_1$
+\end{itemize}
+\end{minipage}
+\section{Les lettres greques}
+\begin{tabular}{|c|c|c|c|c|c}
+\hline $\alpha$ \$ \textbackslash alpha\$ & $\beta$ \$ \textbackslash beta\$ & $\gamma$ \$ \textbackslash gamma\$ & $\epsilon$ \$ \textbackslash epsilon\$ & $\eta$ \$ \textbackslash eta\$ & $\theta$ \$ \textbackslash theta\$ \\
+\hline $\delta$ \$ \textbackslash delta\$ & $\nu$ \$ \textbackslash nu\$ & $\mu$ \$ \textbackslash mu\$ & $\xi$ \$ \textbackslash xi\$ & $\psi$ \$ \textbackslash psi\$ & $\rho$ \$ \textbackslash rho\$ \\
+\hline
+\end{tabular}
+\begin{re}
+	pour \'ecrire une lettre greque il suffit d\'ecrire \$ \textbackslash nom\_de\_la\_lettre. Dans le cas d'une lettre greque majuscule, il suffit d'\'ecrire la premi\`ere lettre en majuscule.
+\end{re}
+
+	
+\end{document}

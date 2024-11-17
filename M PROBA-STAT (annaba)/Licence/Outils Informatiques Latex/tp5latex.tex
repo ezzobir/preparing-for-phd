@@ -1,0 +1,83 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usetheme{warsaw}
+	\title{Determining surface temperature for an axisymmetric inverse heat conduction problem}
+	\author{\textsc{I.D}jerrar, \textsc{L.A}lem  and  \textsc{L.C}horfi}
+		\institute{Lab. LMA, B.M University, Annaba 
+		\\1ère édition du colloque National
+		\\Mathématiques Appliquées et \'Equation Différentielles \\ "MAED'2018"" }
+	\date{\textsc{N}ovember, 28, 2018,\textsc{E}l, \textsc{T}arf}
+	\begin{document}
+	\maketitle
+	\begin{frame}
+	\frametitle{The plan} \tableofcontents
+	\end{frame}
+	\begin{frame}
+	\section{Introduction}
+	\frametitle{Introduction}
+	The inverse heat conduction problems \textcolor{magenta}{\textsc{(IHCB)}} arises from many physical and engineering problems. It is often impossible to directly measure the desired physical quantity. In this situation ,one way to measure this quantity is to solve a boundary value inverse heat conduction problem.\\
+	 \qquad We willl consider an axisymmetric inverse problem for the heat aquation inside the cylinder   $ a \leq r \leq b$
+	    
+\end{frame}
+\begin{frame}
+\section{Direct problem}
+		\frametitle{Direct problem}
+We assume that $u(a,t)=f(t)$ is known and we consider the following direct problem:
+\begin{equation}\label{eq1}
+\left\lbrace 
+\begin{array}{lrl}
+\frac{\partial u}{\partial t}=\frac{\partial u^{2}}{\partial r^{2}}+\frac{1}{r}\frac{\partial u}{\partial r}, \ \ r\in (a,b),\ \ t\geq 0,\\
+u(a,r)=f(t),\\
+\frac{\partial u}{\partial r} (b,t)=0, \quad t\geq 0\\
+u(r,0)=0 \quad r\in[a,b].
+\end{array}
+\right. 
+\end{equation}
+\end{frame}	
+\begin{frame}
+\subsection{Construction of the solution}
+	\frametitle{construction of the solution}
+	We use \textcolor{green}{the Laplace transform} for the representation of the solution:\\
+	Let\\
+\begin{equation}
+		\textsc{F}=\mathcal{L}(\textsl{f})\Leftrightarrow \textsc{F}(s):=\int_{0}^{+\infty}e^{-st}f(t)dt
+\end{equation}
+The inverse \textcolor{violet}{Laplace transform} is given by the complex inversion formula\\
+\begin{equation}
+f(t)=\mathcal{L}^{-1}(\textsc{F})(t)=\frac{1}{2\pi i}\int_{\sigma-\infty}^{\sigma+\infty}e^{st}\textsc{F}(s)ds, \quad t>0 
+\end{equation}
+\end{frame}
+\begin{frame}
+\begin{theorem}
+	\begin{itemize}
+		\item Assume that $ f(t)\in C^{1}$,such that $f(0)=0$ for $t\geq$ T. Then the series $ (12)$ converge in $ L^{2}(]a,b)[)$ for all$ t\geq 0$ and defines one solution of the problem \eqref{eq1}  in $H.$
+	\end{itemize}
+\end{theorem}
+\end{frame}
+%\begin{frame}
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[height=4 cm]{untitled.png}
+%		\caption{\textit{graphe une fonction.}}
+%		\label{untitled}
+%	\end{figure}
+%\end{frame}
+\begin{frame}
+\section{Bibliograhy}
+\frametitle{Bibliography}
+\begin{thebibliography}{widestlabel}
+
+	\bibitem{Kirsh}A. Kirsh. \textit{Introduction to mathematical theory of inverse problems}. Series AMS Vol. 120, Springer, 2011.
+	\bibitem{Ditkine}A. Ditkine, A. Proudnikov.\textit{Transformation intégrales et calcul opérationnel} Traduit du russe, edition MIR,Moscou,1978.
+	\bibitem{Cheng} W.Cheng. Regularization and stability estimates for an inverse source problem of the radially symmetric parabolic equation. \textit{Journal of Inequalities and Applications}, 2015:136, 2015.
+	\bibitem{Cheng}W. Cheng, C-L. Fu. Tow regularization methods for an axisymmetric inverse heat conduction problem. \textit{J. Inv. Ill-Posed Problems}, 17, 159-172, 2009.
+\end{thebibliography}
+\end{frame}
+\end{document}

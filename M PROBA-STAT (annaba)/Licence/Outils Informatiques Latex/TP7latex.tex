@@ -1,0 +1,68 @@
+\documentclass[25pt,a1paper]{tikzposter}
+%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage[french]{babel}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%%%%%%%%%
+\usepackage{graphicx}
+\graphicspath{{/home/darrin/Downloads}}
+\usetheme{Rays}
+\usepackage{multicol}
+\begin{document}
+\title{Problème de la chaleur à symétrie radiale }
+\author{I.Djerrar, L.Alem, L. Chorfi}
+\maketitle
+\begin{columns}
+% COLUMN 1
+\column{.65}
+%Block A
+\block{Abstract}{
+\bigskip
+Dans ce travail on s'intéresse à un problème de la chaleur. On résout le problème direct qui servira à résoudre un problème inverse associé dans $\mathbb{R}.$
+}
+%Block B
+\block{Problème direct}
+{
+\section{Position du problème}
+On considère la problème de la théorie de la chaleur, on coordonnée radiale suivant
+\begin{equation}
+\begin{cases}
+\frac{\partial u}{\partial t}=\frac{\partial ^2u}{\partial ^2 r}+\frac{1}{r}\frac{\partial u}{\partial r},\hspace{2cm} r\in\left( a,b\right), \quad t>0\\
+u(a,t)=f(t) , \frac{\partial u}{\partial r }(b,t)=0 \hspace{2cm} t>0\\
+u(r,0)=0, \hspace{3cm} r\in(a,b)
+\end{cases}
+\end{equation} 
+Le but de ce travail est de résoudre ce problème par deux méthodes, analytique et approchée
+}
+%Block C
+\block{Construction de la solution }
+{
+\subsection{Construction de la solution à l'aide de la transformée de Laplace }
+Soit $f$  une fonction tel que $|{f(t)}| \leq Ce^{\sigma T}, \sigma\geq 0,$\\
+La transformée de la place $F(s)=L(f)$ est définie par:
+$$F(s) = \int_{0}^{+\infty}f(t)e^{-st}dt,  Re(s)\geq \sigma $$
+La transformée inverse est donnée par\cite{Ditkine}
+$$f(t)= L^{-1}(F)(t)=\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}F(s)e^{st}ds$$
+}
+% COLUMN 2
+\column{.35}
+\block{Solution exacte et approchée}
+{
+\includegraphics[width=\linewidth]{fig2.png}
+}
+\end{columns}
+\block{Conclusion}
+{
+Le problème est résolue par une approche basée sur la transformée de Laplace directe et inverse. Ce problème s'est réduit à une équation intégrale de Volterra de première espèce avec un noyau très régulier.
+}
+\block{Bibliograhie}
+{
+\begin{thebibliography}{}
+\bibitem{Ditkine} Ditkine V. Proudnikov A. Transformation intégrales et calcul opérationnel. Traduit du russe edition MIR.Moscow, 1978.
+\bibitem{Herbin} Herbin R., Analyse numérique des EDP. ENgineering school,Marseille 2011.
+\end{thebibliography}{}
+}
+\end{document}

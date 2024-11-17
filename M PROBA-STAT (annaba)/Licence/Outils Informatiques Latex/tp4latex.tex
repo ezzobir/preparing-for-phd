@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\author{I.Djerrar, L.Alem, L. Chorfi}
+\date{}
+\title{TP4: Table des matières, figures, bibliographie.\\
+Résolution d'un problème de la chaleur à symétrie radiale }
+\bibliographystyle{}
+\begin{document}
+\maketitle % pour generer l'entent de l' article
+\begin{abstract}
+Dans ce travail on s'intéresse à un problème de la chaleur. On résout le problème direct qui servira à résoudre un problème inverse associé dans $\mathbb{R}.$
+\end{abstract}
+\tableofcontents
+\newpage
+\section{Position du problème}
+On considère la problème de la théorie de la chaleur, on coordonnée radiale suivant
+\begin{equation}
+\begin{cases}
+\frac{\partial u}{\partial t}=\frac{\partial ^2u}{\partial ^2 r}+\frac{1}{r}\frac{\partial u}{\partial r},\hspace{2cm} r\in\left( a,b\right), \quad t>0\\
+u(a,t)=f(t) , \frac{\partial u}{\partial r }(b,t)=0 \hspace{2cm} t>0\\
+u(r,0)=0, \hspace{3cm} r\in(a,b)
+\end{cases}
+\end{equation} 
+Le but de ce travail est de résoudre ce problème par deux méthodes, analytique et approchée
+\subsection{Construction de la solution à l'aide de la transformée de Laplace }
+Soit $f$  une fonction tel que $|{f(t)}| \leq Ce^{\sigma T}, \sigma\geq 0,$\\
+La transformée de la place $F(s)=L(f)$ est définie par:
+$$F(s) = \int_{0}^{+\infty}f(t)e^{-st}dt,  Re(s)\geq \sigma $$
+La transformée inverse est donnée par\cite{Ditkine}
+$$f(t)= L^{-1}(F)(t)=\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}F(s)e^{st}ds$$
+\subsection{Annexe}
+Quelle que soit la valeur de $x$, la propriété suivante est toujours vérifie:
+$$\sin^2x+\cos^2x=1$$
+On peut s'en douter en observant le tracé de la fonction illustrée
+\section{Un exemple avec référence bibliographique }
+Dans ce travail on a utilise quelques références \footnote{Ces références sont dans la bibliothèque du département} et on a demendé à\footnote{}\cite{Ditkine} et \cite{Herbin}.
+\section{Un exemple de tableau}
+$$\begin{array}{|r|r|r|}
+\hline n & x & y\\
+\hline x_n & 5 & 8\\
+\hline |e_n| & 0.05 &0.09\\
+\hline x^2-1 & 1 & 8 \\
+\hline
+\end{array}$$ 
+\section{Un exemple d'insertion d'un graphe d'une fonction}
+Le graphe de la fonction $ g(x)=x^2+e^{x-1} $ sur $\left[ -1,1\right]$ est:
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=4cm]{graphe3.png}
+\caption {\textit{graphe de la fonction $g(x)$.}}
+\end{figure}
+\begin{thebibliography}{}
+\bibitem{Ditkine} Ditkine V. Proudnikov A. Transformation intégrales et calcul opérationnel. Traduit du russe edition MIR.Moscow, 1978.
+\bibitem{Herbin} Herbin R., Analyse numérique des EDP. ENgineering school,Marseille 2011.
+\end{thebibliography}{}
+\end{document}
