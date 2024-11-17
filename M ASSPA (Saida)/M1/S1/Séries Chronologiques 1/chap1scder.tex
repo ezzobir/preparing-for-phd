@@ -1,0 +1,545 @@
+\documentclass[a4paper,12pt,freqn]{report}
+%\usepackage[latin1]{inputenc}
+\usepackage{mathenv}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbding}
+\usepackage{array}
+\usepackage{dsfont}
+\usepackage{frcursive}
+\usepackage{niceframe}
+\usepackage{calligra}
+%\usepackage{chancery}
+\usepackage{niceframe}
+\usepackage{lettrine}
+\usepackage{graphicx}
+\usepackage{newlfont}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+\pagestyle{empty}
+\usepackage{color}
+\linespread{1.56}
+\usepackage{mathtools}
+\usepackage{hyperref}
+%\usepackage{top=2cm,bottom=2cm,right=2cm,left=2cm}
+\usepackage[nottoc,notbib]{tocbibind}
+%\usepackage[ps2pdf, colorlinks=true, linkcolor=blue, urlcolor=green, pdfstartview=FitH, pdfhighlight =/O]{hyperref}
+\newlength{\plarg}
+\setlength{\plarg}{17cm}
+\def\zcdefault{zc}
+\DeclareRobustCommand\zcfamily{%
+ \fontfamily\zcdefault\selectfont
+ }
+ \DeclareTextFontCommand{\textzc}{\zcseries}
+%\pagestyle{headings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markright{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+%\fancyhf{} \fancyhead[LE,RO]{\bfseries\thepage}
+%\fancyhead[LO]{\bfseries\rightmark}
+%\fancyhead[RE]{\bfseries\rightmark}
+\makeatletter
+\newcommand\tcaption{\def\@captype{table}\caption}
+\newcommand\fcaption{\def\@captype{figure}\caption}
+\makeatother
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+%\addtolength{\headheight}{0.5pt} \fancypagestyle{headings}{
+%\fancyhead{}
+%\renewcommand{\headrulewidth}{0pt}
+%} 
+\theoremstyle{plain}
+\def\og{\leavevmode\raise.3ex\hbox{$\scriptscriptstyle\langle\!\langle$~}}
+\def\fg{\leavevmode\raise.3ex\hbox{~$\!\scriptscriptstyle\,\rangle\!\rangle$}}
+%\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1.2}
+\newcommand{\cqfd}{\hfill \rule{2mm}{2mm}}
+\def\as={\,\stackrel{a.s.}{=}\,} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%notations symetriques
+\newcommand{\R}{\mathbb R} %ensemble des reels
+\newcommand{\Q}{\mathbb Q} %ensemble des rationnels
+\newcommand{\C}{\mathbb C} %ensemble des complexes
+\newcommand{\Z}{\mathbb Z} %ensemble des relatifs
+\newcommand{\N}{\mathbb N} %ensemble des entiers
+\newcommand{\p}{\mathbb P} %probabilite
+\newcommand{\E}{\mathbb E} %
+
+\def\1{{1\!\!1}}
+\def\P{{\mathrm {I\!P}}}
+\def\E{{\mathrm {I\!E}}}
+\newdimen\AAdi%
+\newbox\AAbo%
+\font\AAFf=cmex10%   %ou cmex10
+\def\AArm{\fam0 \rm}%
+\def\AAk#1#2{\setbox\AAbo=\hbox{#2}\AAdi=\wd\AAbo\kern#1\AAdi{}}%
+\def\AAr#1#2#3{\setbox\AAbo=\hbox{#2}\AAdi=\ht\AAbo\raise#1\AAdi\hbox{#3}}%
+%% alphabet blackboard
+%% 1 blackboard
+\def\1{{\mathrm {1\AAk{-.8}{I}I}}}%
+\def\cov{\hbox{\it Cov}}
+\def\loinorm{\hbox{\cal N}}
+\def\card{\hbox{\it card}}
+\def\var{\hbox{\it Var}}
+\def\P{{ \hbox{\sc I\hskip -2pt P}}} %r‚els
+\def\R{{ \hbox{\sc I\hskip -2pt R}}} %r‚els
+\def\N{{ \hbox{\sc I\hskip -2pt N}}} %naturels
+\def\Z{{\bf Z}} %entiers relatifs
+\def\Q{{\bf \hbox{\sc I\hskip -7pt Q}}} %rationnels
+\def\C{{\bf \hbox{\sc I\hskip -7pt C}}} %complexe
+\def\I{{\bf \hbox{\sc I\hskip -2pt I}}} %complexe
+\def\F{\widehat{F }}
+\def\f{\widehat{f }}
+\def\h{\widehat{h }}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\def\Th{th\'eor\`eme}
+\newtheorem{theor}{Theorem}[section]
+\newtheorem{Theor}{Theorem}[subsection]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{theoreme}{Theorem}[section]
+\newtheorem{theo}{Theorem}[subsection]
+\newtheorem{theore}{Theorem}[subsubsection]
+\newtheorem{corollaire}{Corollary}[chapter]
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{corolla}{Corollary}[section]
+\newtheorem{cor}{Corollary}[subsection]
+\newtheorem{coroll}{Corollary}[subsubsection]
+\newtheorem{llem}{Lemma}[chapter]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{lemme}{Lemma}[subsection]
+\newtheorem{lemm}{Lemma}[subsubsection]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{prop}{Proposition}[subsection]
+\newtheorem{pr}{Proposition}[chapter]
+\newtheorem{propos}{Proposition}[subsubsection]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{defn}{Definition}[subsection]
+\newtheorem{defne}{Definition}[subsection]
+\newtheorem{defntn}{Definition}[subsubsection]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{re}{Remark}[subsection]
+\newtheorem{rema}{Remark}[subsection]
+\newtheorem{remar}{Remark}[subsubsection]
+\newtheorem{exe}{Example}
+\newtheorem{propr}{Propriété}
+\newtheorem{dem}{Démonstration}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{} \vfill \vspace{1cm}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\huge \@title
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\usefont{OT1}{phv}{m}{n}
+\Large \@author
+\par
+\end{flushright}
+\vspace{1cm} \vfill \vfill \bas{}{\@location, }{}
+}%
+\clearpage }
+%\def\date#1{\def\@date{#1}}
+%\def\author#1{\def\@author{#1}}
+%\def\title#1{\def\@title{#1}}
+%\def\location#1{\def\@location{#1}}
+%\def\blurb#1{\def\@blurb{#1}}
+\def\ds{\displaystyle}
+
+%\clearpage\hypersetup{
+   % colorlinks=true, %colorise les liens
+    %breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+    %urlcolor= blue,  %couleur des hyperliens
+    %linkcolor= blue, %couleur des liens internes
+    %plainpages=false  %pour palier à "Bookmark problems can occur when you have duplicate page numbers, for example, if you have a page i and a page 1."
+%}
+\begin{document}
+
+
+
+\chapter{Concepts des s\'{e}ries tomporelles}
+\section{Introduction}
+\subsection{ Vocabulaire et exemples}
+\begin{defi}
+Une suite d'observations d'une famille de variables al\'{e}atoires r\'{e}elles $(X_{t})_{t\in\Theta}$ index\'{e}e par le temps est appel\'{e}e s\'{e}rie
+chronologique (ou temporelle).
+$o\grave{u}$ l'ensemble $\Theta$ est appel\'{e} espace de temps qui peut \^{e}tre :\\
+\begin{itemize}
+  \item \textbf{discret} (nombre d'\'{e}tudiants inscrits \`{a} l'universit\'{e}, temp\'{e}rature maximale, nombre mensuel de vente de voitures en Alg\`{e}rie, nombre annuel de naissance en Alg\`{e}rie, ...). Dans ce cas, $\Theta\subset\mathbb{Z}$.
+Les dates d'observations sont le plus souvent \'{e}quidistantes : par exemple relev\'{e}s mensuels, trimestriels...Ces dates \'{e}quidistantes sont alors index\'{e}es par des entiers : t = 1, 2, . . . ,T et T est le nombre
+d'observations. On dispose donc des observations des variables $X_{1},X_{2},...,X_{T}$. Ainsi si h est l'intervalle de temps s\'{e}parant deux
+observations et $t_{1}$ l'instant de la premi\`{e}re observation, on a le sch\'{e}ma suivant:
+\begin{center}
+    $t_{1}$ \ $t_{1}+h$  $\ldots$  $t_{1}+(T-1)h$ \\
+     $X_{t_{1}}$  \  $X_{t_{1
+     +h}}$ $\ldots$   $X_{t_{1}+(T-1)h}$ \\
+     $X_{1}$ \  $X_{2}$  $\ldots$  $X_{T}$
+\end{center}
+
+  \item \textbf{continu} (signal radio, r\'{e}sultat d'un \'{e}lectrochardiogramme...). L'indice de temps est \`{a} valeurs dans
+un intervalle de $\mathbb{R}$ et on dispose (au moins potentiellement) d'une infinit\'{e} d'observations issues
+d'un processus $(X_{t})_{t\in\Theta}$ $o\grave{u}$ $\Theta$ est un intervalle de  $\mathbb{R}$. Un tel processus est dit \`{a} temps continu.
+\end{itemize}
+\end{defi}
+\begin{Remark} 
+ Les dates d\`{}observations sont g\`{e}n\`{e}ralement ordonn\`{e}es de manière r\`{e}gulière dans le temps : on manipule des s\`{e}ries
+ \begin{itemize}
+   \item  journali\`{e}res (cours d\`{}une action en bourse).
+   \item  mensuelles (consommation mensuelle d\`{}\`{e}lectricit\`{e}).
+   \item  trimestrielles (nombre trimestriel de ch\^{o}meurs).
+   \item  annuelles (chiffre annuel des b\`{e}n\`{e}fices des exportations).
+ \end{itemize}
+\end{Remark}
+
+
+annuelles (chiffre annuel des b\`{e}n\`{e}fices des exportations).
+
+\subsection{Exemples}
+On peut songer par exemple \`{a} : \\
+1- l'\'{e}volution du nombre mensuel de voyageurs utilisant le  transport a\'{e}rien, (s\`{e}rie AirPassengers du langage R)\\
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+
+     & Jan& Feb &Mar &Apr &May &Jun &Jul &Aug &Sep &Oct &Nov &Dec \\
+
+1949 &112& 118& 132& 129& 121 &135 &148 &148 &136 &119 &104 &118 \\
+
+1950 &115 &126 &141 &135 &125 &149 &170 &170 &158 &133 &114 &140 \\
+
+1951 &145 &150 &178 &163 &172 &178 &199 &199 &184 &162 &146 &166 \\
+
+1952 &171 &180 &193 &181 &183 &218 &230 &242 &209 &191 &172 &194 \\
+
+1953 &196 &196 &236 &235 &229 &243 &264 &272 &237 &211 &180 &201 \\
+
+1954 &204 &188 &235 &227 &234 &264 &302 &293 &259 &229 &203 &229 \\
+
+1955 &242 &233 &267 &269 &270 &315 &364 &347 &312 &274 &237 &278 \\
+
+1956 &284 &277 &317 &313 &318 &374 &413 &405 &355 &306 &271 &306 \\
+
+1957 &315 &301 &356 &348 &355 &422 &465 &467 &404 &347 &305 &336 \\
+
+1958 &340 &318 &362 &348 &363 &435 &491 &505 &404 &359 &310 &337 \\
+
+1959 &360 &342 &406 &396 &420 &472 &548 &559 &463 &407 &362 &405 \\
+
+1960 &417 &391 &419 &461 &472 &535 &622 &606 &508 &461 &390 &432 \\
+\hline
+\end{tabular}
+\bigskip
+
+% Requires \usepackage{graphicx}
+  %\includegraphics[width]{air.pdf}\\
+  %\caption{Figure 1}\label{}
+  \begin{center}
+  \includegraphics[width=10cm]{air.pdf}\\
+
+
+  \textbf{Figure 1.1}
+\end{center}
+
+
+2- la temp\'{e}ratures mensuelles moyennes \`{a} Nottingham, 1920-1939 :
+
+
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=10cm]{nottem.pdf}\\
+  \textbf{Figure 1.2}
+\end{center}
+
+3-la concentration atmosph\'{e}rique de CO2 \`{a} Maunaloa :
+
+
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=10cm]{Co2.pdf}\\
+\textbf{Figure 1.3}
+\end{center}
+4- \ l'accroissement relatif mensuel de l'indice des prix.
+
+\subsection{Domaines d\`{}application}
+On trouve des exemples de s\'{e}ries chronologiques univari\'{e}es dans de tr\'{e}s nombreux domaines.
+La liste suivante n\'{}est qu\'{}un \'{e}chantillon:
+\begin{itemize}
+
+  \item finance et \'{e}conom\'{e}trie : \'{e}volution des indices boursiers, des prix, des donn\'{e}es \'{e}conomiques
+des entreprises, des ventes et achats de biens, des productions agricoles ou industrielles,
+  \item assurance : analyse des sinistres,
+
+  \item  m\'{e}decine / biologie : suivi des \'{e}volutions des pathologies, analyse d\'{}\'{e}lectro-enc\'{e}phalogrammes
+et d\'{}\'{e}lectrocardiogrammes,
+
+  \item sciences de la terre et de l\'{}espace : indices de mar\'{e}es, variations des ph\'{e}nom\'{e}nes physiques
+(m\'{e}t\'{e}orologie), \'{e}volution des taches solaires, ph\'{e}nom\'{e}nes d\'{}avalanches,
+  \item traitement du signal : signaux de communications, de radars, de sonars, analyse de la parole,
+
+  \item traitement des donn\'{e}es : mesures successives de position ou de direction d\'{}un objet mobile (trajectographie).
+\end{itemize}
+
+
+\subsection{Objectifs principaux}
+L'\'{e}tude d'une s\'{e}rie chronologique permet \textbf{d'analyser, de d\'{e}crire et d'expliquer} un ph\'{e}nom\`{e}ne au cours
+du temps et d'en tirer des cons\'{e}quences pour des prises de d\'{e}cision (marketing...). \\
+\\ Cette \'{e}tude permet aussi de faire un contr$\hat{o}$le, par exemple pour le gestion des stocks, le contr$\hat{o}$le d'un
+processus chimique.\\
+Mais l'un des objectifs principaux de l'\'{e}tude d'une s\'{e}rie chronologique est la pr\'{e}vision qui consiste \`{a}
+pr\'{e}voir les valeurs futures $X_{T+h}$ (h = 1, 2, 3, . . .) de la s\'{e}rie \`{a} partir de ses valeurs observ\'{e}es
+jusqu'au temps T: $X_{1}$,\ $X_{2}$,...,\ $X_{T}$ .\\
+Il existe encore bien d'autres objectifs imm\'{e}diats relatifs \`{a} l'\'{e}tude des s\'{e}ries chronologiques. Par exemple : \\
+
+ si deux s\'{e}ries sont observ%
+ \'{e}es, on peut se demander quelle \textbf{influence elles exercent l'une
+sur l'autre}. En notant X$_{t}$ et Y$_{t}$ les deux s\'{e}ries en question,
+on examine s'il existe par exemple des relations du type
+
+Y$_{t}$ = a$_{1}$X$_{t-1}$ + a$_{3}$X$_{t-3}$.
+
+Ici, deux questions se posent : tout d'abord, la question de \textbf{la
+causalit\'{e}} i.e. quelle variable (ici (X$_{t}$)) va expliquer l'autre
+(ici (Y$_{t}$)), ce qui am\`{e}ne \`{a} la deuxi\`{e}me question, celle \textbf{du
+d\'{e}calage temporel} : si une influence de (X$_{t}$) sur (Y$_{t}$) existe,
+avec quel d\'{e}lai et pendant combien de temps la variable explicative (X$%
+_{t}$) influence-t-elle la variable expliqu\'{e}e (Y$_{t}$) ?
+
+\mathbf{\textbf{Application}}
+la s\'{e}rie suivante repr\'{e}sente le nombre de crimes par trimestre d'une certaine ville  $17-20-30-15-19-24-36-20-22-27-39-23-25-30-42-26$
+\begin{itemize}
+  \item Tracer le graphe de cette s\'{e}rie.
+\end{itemize}
+
+\bigskip
+
+\bigskip
+\newpage
+\section{\textbf{ Description d'une s\'{e}rie chronologique}}
+
+On consid\`{e}re qu'une s\'{e}rie chronologique (X$_{t}$) est la r\'{e}%
+sultante de diff\'{e}rentes composantes fondamentales :
+
+\bigskip
+
+\subsection{  la tendance ou trend}
+ (Z$_{t}$) repr\'{e}sente l'%
+\'{e}volution \`{a} long terme de la s\'{e}rie \'{e}tudi\'{e}e. Elle traduit le
+comportement \textquotedblright moyen\textquotedblright\ de la s\'{e}rie. Elle est le plus souvent mod\'{e}lis\'{e}e par une fonction lin\'{e}aire ou
+polynomiale du temps.
+Par exemple, la s\'{e}rie de la Figure 1.3 a tendance \`{a} augmenter de fa\c{c}on
+lin\'{e}aire et indique que le nombre de voyageurs a augment\'{e} de mani\`{e}re r\'{e}%
+guli\`{e}re au cours du temps.
+
+\bigskip
+
+\subsection{la composante saisonni\`{e}re (ou saisonnalit\'{e})}
+
+
+$S_{t}$ correspond \`{a} un ph\'{e}nom\`{e}ne qui se r\'{e}p\`{e}te \`{a}
+intervalles de temps r\'{e}guliers (p\'{e}riodiques). En g\'{e}n\'{e}ral,
+c'est un ph\'{e}nom\`{e}ne saisonnier d'\`{o}u le terme de variations saisonni%
+\`{e}res.
+Les variations saisonni\`{e}res sont li\'{e}es au rythme impos\'{e} par les
+saisons m\'{e}t\'{e}orologiques (production agricole, consommation de gaz,
+vente des cr\`{e}mes solaires. . . ) ou encore par des activit\'{e}s \'{e}%
+conomiques et sociales ( f\^{e}tes, vacances, soldes,. . . ).
+ C'est un ph\'{e}nom\`{e}ne qui
+se reproduit de mani\`{e}re analogue sur chaque intervalle de temps
+successif. Lorsqu'on veut mettre en \'{e}vidence ce ph\'{e}nom\`{e}ne \`{a}
+l'aide d'un graphique, on peut d\'{e}couper la s\'{e}rie en sous-s\'{e}ries
+de longueur de p\'{e}riode P du saisonnier et repr\'{e}senter ces sous-s\'{e}%
+ries sur un m\`{e}me graphique. Dans la suite. La plupart du temps, on suppose que la composante saisonni%
+\`{e}re est constante sur chaque p\'{e}riode P, c'est-`a-dire S$_{t+P}$ = S$%
+_{t}$.
+0
+Lorsque P = 4, la s\'{e}rie est trimestrielle ; lorsque P = 12, la s\'{e}rie
+est mensuelle. (cf. Figure1.4). Sur ce
+graphique, on voit bien une similarit\'{e} des diff\'{e}rentes courbes
+annuelles li\'{e}e aux saisons \ m\'{e}t\'{e}orologiques.\\
+
+\subsection{la composante r\'{e}siduelle. (ou bruit ou r\'{e}sidu)}
+
+
+
+$Y_{t}$ correspond \`{a} des fluctuations irr\'{e}guli\`{e}res, en g\'{e}n\'{e}%
+ral de faible intensit\'{e} mais de nature al\'{e}atoire. On parle aussi d'al%
+\'{e}as. sont des variables al\'{e}atoires centr\'{e}es. On
+consid\`{e}re le plus souvent un bruit blanc, c'est-\`{a}-dire une suite de
+v.a.r. telles que
+\begin{array}{ll}
+     E($\varepsilon _{t}$) = 0 et E($\varepsilon _{t1}\varepsilon _{t2}$) = & \left\{
+                                                  \begin{array}{l1}
+                                                      $\sigma^{2}$ &  si\ $t1=t2$ \\
+                                                       0   & sinon
+                                                  \end{array}
+                                                \right.
+       \\
+ \end{array}$
+
+Les v.a.r. sont alors non corr\'{e}l\'{e}es et lorsque le bruit blanc est
+gaussien c'est-`a-dire que $\varepsilon _{t}$ \sim N(0, \sigma$^{2}$),
+on a de plus l'ind\'{e}pendance des $\varepsilon _{t}$.
+
+
+ Par exemple, la s\'{e}rie  de la Figure 1.4 a un comportement
+assez irr\'{e}gulier : il y a comme une sorte de bruit de faible amplitude
+qui perturbe les donn\'{e}es.
+
+Les mod\`{e}les pr\'{e}sent\'{e}s dans \`{a} la suite tiennent compte de ces trois
+composantes (tendance, saisonnalit\'{e} et fluctuations irr\'{e}guli\`{e}%
+res). Il faut cependant remarquer que l'on pourrait envisager d'autres
+composantes.
+
+\subsection{ Des ph\'{e}nom\`{e}nes accidentels}
+ gr\`{e}ves,
+conditions m\'{e}t\'{e}orologiques exceptionnelles, crash financier) peuvent
+notamment intervenir. Par exemple, la s\'{e}rie d) de la Figure 1. pr\'{e}%
+sente deux cassures.
+
+
+\section{ Mod\'{e}lisation}
+
+Un mod\`{e}le est une image simplifi\'{e}e de la r\'{e}alit\'{e} qui vise \`{a} traduire les m\'{e}canismes de fonctionnement du ph\'{e}nom\`{e}ne
+\'{e}tudi\'{e}. On distingue principalement deux types de mod\`{e}les :
+
+\subsection{les mod\`{e}les d\'{e}terministes.}
+
+\textbf{\ }X$_{t}$ = f(t,$\varepsilon _{t}$).
+
+Les deux mod\`{e}les de ce type les plus usit\'{e}s sont les suivants
+
+\subsubsection{le mod\`{e}le additif}.
+
+
+X$_{t}$ s'%}
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+\'{}%
+%EndExpansion
+ecrit comme le somme de trois termes : \\
+ $X_{t} = Z_{t} + S_{t} + \varepsilon _{t}$,
+
+\subsubsection{le mod\`{e}le multiplicatif}.
+ La variable X$_{t}$ s'\'{}ecrit \\
+$X_{t}= Z_{t} \times S_{t} \times\varepsilon _{t}$ .
+
+\subsection{ les mod\`{e}les stochastiques}.
+
+Ils sont du m\`{e}me type que}
+les mod\`{e}les d\'{e}terministes \`{a} ceci pr\'{e}s que les variables de
+bruit $\varepsilon _{t}$ ne sont pas iid mais poss\`{e}dent une structure de
+corr\'{e}lation non nulle : $\varepsilon _{t}$ est une fonction des valeurs
+pass\'{e}es ( lointaines suivant le mod\`{e}le) et d'un terme d'erreur
+\eta_{t}
+
+$\varepsilon _{t}$ = g($\varepsilon _{t-1}$, $\varepsilon _{t-2}$, . . . ,
+\eta_{t}).
+
+La classe des mod\`{e}les de ce type la plus fr\'{e}quemment utilis\'{e}e est
+la classes des mod\`{e}les SARIMA (et de ses sous-mod\`{e}les ARIMA, ARMA,...).
+
+Les deux types de mod\`{e}les ci-dessus induisent des techniques de pr\'{e}%
+vision bien particuli\`{e}res.
+\section{Mod\`{e}lisation d\`{e}terministe}
+\subsection{ le mod\`{e}le additif}
+X$_{t}$ = Z$_{t}$ + S$_{t}$ + $\varepsilon _{t}$, t\in Z.
+
+-- Dans ce mod\`{e}le, l'amplitude de la s\'{e}rie reste constante au cours
+du temps. Cela se traduit graphiquement par des fluctuations autour de la
+tendance Z$_{t}$ constantes au bruit pr\`{e}s.\\
+\textbf{Remarque 2.1 }
+-- A premi\`{e}re vue, la notion de composante p\'{e}riodique pourrait
+\^{e}tre suffisante. Cependant, ce n'est pas le cas pour la raison d\'{e}%
+crite ci-apr\`{e}s. Consid\'{e}rons le mod\`{e}le additif
+
+X$_{t}$ = Z$_{t}$ + S$_{t}$ + $\varepsilon _{t}$, t\in Z.
+
+Cette d\'{e}composition n'est pas unique en l'absence d'hypoth\`{e}ses suppl%
+\'{e}mentaires. En effet, si S$_{t}$ est une composante p\'{e}riodique de p%
+\'{e}riode p, alors il existe une constante c telle que
+
+S$_{t+1}$ + . . . + S$_{t+p}$ = c, t\in Z.
+
+Dans ce cas, on a aussi la d\'{e}composition suivante
+
+$X_{t} =  \grave{Z}_{t} + \grave{S}_{t}+ \varepsilon _{t},$
+
+\grave{ou}  pour tout t $\in Z, \grave{Z}_{t} = Z_{t}+ c/p$ et $\grave{S}_{t} = S_{t}-
+c/p $. On a donc trouv\'{e} une autre d\'{e}composition du signal X$_{t}$. On
+remarquera que $\grave{S}_{t}$ est une composante de somme nulle sur la p\'{e}riode
+p. C'est pourquoi on impose \`{a} toute composante saisonni\`{e}re d\`{}etre p\'{e}riodique et de somme nulle sur une p\'{e}riode$(\frac{1}{p}\sum^{p}_{i=1}S_{i}=0)$.\\
+  % Requires \usepackage{graphicx}
+ \begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=10cm]{dddd.pdf}\\
+\textbf{Figure 1.4}
+\end{center}
+
+
+
+\subsection{le multiplicatif}
+
+Nous consid\'{e}rons dans cette section une s\'{e}rie $X = (X_{t})_{t}$
+admettant une d\'{e}composition muliplicative
+
+X$_{t}$ = Z$_{t}$\times $S_{t}$\times$\varepsilon _{t}$, t = 1 . . . T,
+
+Dans ce cas l'amplitude de la s\'{e}rie n'est
+plus constante au cours du temps : elle varie au cours du temps
+proportionnellement \`{a} la tendance Z$_{t}$ au bruit pr\`{e}s. Dans ce mod%
+\`{e}le, on suppose que $ \frac{1}{p}\sum^{p}_{i=1}S_{i}=1$.
+
+\bigskip
+\begin{Remark}\begin{itemize}
+                \item Dans le cas d\`une s\`{e}rie $(X_{t})$ \grave{à} valeurs positives, ce 2e mod\`{e}le multiplicatif se ram\'{e}ne à un mod\'{e}le additif en consid\`{e}rant la s\`{e}rie $(ln(X_{t})$ :$ ln(X_{t}) = ln(C_{t}) + ln(S_{t}) + ln(ε_{t})$. La seule diff\`{e}rence entre les 2 mod\'{e}les multiplicatifs est dans lestimation des $ε_{t}$ qui n\`{}a pas une grande importance.
+                \item  Le mod\`{e}le multiplicatif est g\'{e}n\'{e}ralement
+utilis\'{e} pour des donn\'{e}es de type \'{e}conomique.
+              \end{itemize}
+
+\end{Remark}
+
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=10cm]{multi.pdf}\\
+  \caption{}\label{}
+
+
+
+\subsection{Les modeles mixtes}}
+
+Il s'agit  de mod\`{e}les ou addition et multiplication sont utilis\'{e}%
+es. On peut supposer par exemple que la composante saisonni\`{e}re agit de
+facon multiplicative alors que les fluctuations irr\'{e}gulieres sont
+additives :
+
+X$_{t}$ = Z$_{t}$ S$_{t}$ + $\varepsilon _{t}$, t = 1 . . . T.
+\end{document}
