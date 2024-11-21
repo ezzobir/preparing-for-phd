@@ -1,0 +1,779 @@
+%\setbeamertemplate{background canvas}[vertical shading][top=white,bottom=yellow]
+%\setbeamertemplate{background canvas}[vertical shading][top=white,bottom=yellow]
+
+\documentclass[notes=show,smaller,c,envcountsect]{beamer}%
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{geometry}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{CSTFile=beamer.cst}
+%TCIDATA{Created=Monday, April 16, 2018 11:15:00}
+%TCIDATA{LastRevised=Thursday, June 09, 2022 05:14:15}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Other Documents\SW\Slides - Beamer">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{Frankfurt}
+\setbeamersize{text margin left=0.5cm, text margin right=0.5cm}
+\beamerboxesdeclarecolorscheme{blocbleu}{blue}{yellow}
+\beamerboxesdeclarecolorscheme{bloclightgray}{green}{lightgray}
+\begin{document}
+
+\title{\textbf{Création d'une présentation avec }\textsl{Beamer}}
+\author{\textbf{Yahia Djabrane}}
+\institute{\textbf{Département de Mathématiques}%
+%TCIMACRO{\FRAME{ftbpF}{1.5772cm}{1.4981cm}{0pt}{}{}{logo.bmp}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";  display "USEDEF";
+%valid_file "F";  width 1.5772cm;  height 1.4981cm;  depth 0pt;
+%original-width 4.4892in;  original-height 2.6671in;  cropleft "0";
+%croptop "1";  cropright "1";  cropbottom "0";
+%filename 'logo.bmp';file-properties "XNPEU";}} }%
+%BeginExpansion
+\begin{figure}
+[ptb]
+\begin{center}
+\includegraphics[
+natheight=2.667100in,
+natwidth=4.489200in,
+height=1.4981cm,
+width=1.5772cm
+]%
+{logo.bmp}%
+\end{center}
+\end{figure}
+%EndExpansion
+}
+\date{
+%TCIMACRO{\TeXButton{colorbox}{\colorbox{red}{MARDI 14 JUIN 2022}}}%
+%BeginExpansion
+\colorbox{red}{MARDI 14 JUIN 2022}%
+%EndExpansion
+}
+\maketitle
+\tableofcontents
+
+\section{Qu'est-ce que Beamer ?}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Bienvenue à vous tous !}}%
+%BeginExpansion
+\frametitle{Bienvenue à vous tous !}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item[a)] Si vous avez envie de représenter un exposé ou d'autres text
+scientifique, Beamer est un bon choix ! Mais qu'est-ce que Beamer ?
+
+\item On compare souvent
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+à Word, ici on comparera Beamer à PowerPoint.\bigskip
+
+\item Beamer est une classe
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+spécialement faite pour la création de présentations (diaporamas ou
+slides...). C'est en quelque sorte un complément à
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}}}%
+%BeginExpansion
+\LaTeX{}%
+%EndExpansion
+. La puissance de Beamer se montre par l'affichage qui se fait dans un
+PDF.\bigskip
+
+\item Le nom provient de l'allemand Beamer (\textbf{se prononce "bimeur"}),
+faux anglicisme pour vidéoprojecteur. Historiquement, il est créé par Till
+Tantau en 2003.
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\section{Thèmes de présentation}
+
+\subsection{Les thèmes beamer}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Les thèmes beamer}}%
+%BeginExpansion
+\frametitle{Les thèmes beamer}%
+%EndExpansion
+
+
+\begin{stepitemize}
+\item Types de themes:
+
+\begin{itemize}
+\item Sans barres de navigation
+
+\item Avec une barre latérale de table des matières
+
+\item Avec une navigation de mini-cadre
+
+\item Avec les tableaux de sections et de sous-sections
+\end{itemize}
+
+\item Pour utiliser un thème, ajoutez la commande \textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usetheme \{themename\}} au préambule de votre document, en remplaçant toute
+commande \textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usetheme} existante.
+\end{stepitemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Les thèmes beamer : themename}}%
+%BeginExpansion
+\frametitle{Les thèmes beamer : themename}%
+%EndExpansion
+
+
+\begin{center}%
+\begin{tabular}
+[c]{llll}%
+\textbf{Default} & \textbf{Bergen} & \textbf{Boadilla} & \textbf{Madrid}%
+\bigskip\\
+\textbf{Rochester} & \textbf{Antibes} & \textbf{JuanLesPins} &
+\textbf{PaloAlto}\bigskip\\
+\textbf{Montpellier} & \textbf{Berkeley} & \textbf{Marburg} & \textbf{Ilmenau}%
+\bigskip\\
+\textbf{Berlin} & \textbf{Hannover} & \textbf{Goettingen} & \textbf{Dresden}%
+\bigskip\\
+\textbf{Singapore} & \textbf{Frankfurt} & \textbf{Szeged} &
+\textbf{Copenhagen}\bigskip\\
+\textbf{Luebeck} & \textbf{Malmoe} & \textbf{Warsaw} & \textbf{Pittsburgh}%
+\end{tabular}
+
+
+
+\end{center}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\section{Les frames}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Les frames}}%
+%BeginExpansion
+\frametitle{Les frames}%
+%EndExpansion
+
+
+Une frame représente un transparent, lequel peut être affiché en plusieurs étapes.
+
+\begin{stepitemize}
+\item Dans \textsl{SWP} : \textbf{Frame title }et\textbf{\ Frame subtitle}
+text tags sont utilisés pour les titres et les sous-titres resp.
+
+\item \textbf{BeginFrame fragment} pour commencer la page (le frame).
+
+\item \textbf{EndFrame fragment} pour finir la page (le frame).
+
+\item \textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+begin\{frame\}[plain] }pour définir une frame sans aucun décor.
+\end{stepitemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}[plain]}}%
+%BeginExpansion
+\begin{frame}[plain]%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Les listes}}%
+%BeginExpansion
+\frametitle{Les listes}%
+%EndExpansion
+
+
+\begin{stepenumeratewithalert}
+\item Les listes sous Beamer sont une des choses les plus intéressantes et
+plus utilisées.
+\end{stepenumeratewithalert}
+
+\begin{itemize}
+\item Types de listes:
+\end{itemize}
+
+\begin{stepenumerate}
+\item Step numbered and bulleted lists
+\end{stepenumerate}
+
+\begin{enumerate}
+\item numbered lists
+\end{enumerate}
+
+\begin{stepenumeratewithalert}
+\item Alert step lists
+\end{stepenumeratewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Marges et Logo}}%
+%BeginExpansion
+\frametitle{Marges et Logo}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item Il est possible de modifier la marge de gauche ou de droite d'une frame
+ou les deux en même temps comme suit:\newline Typset$\rightarrow
+$Preamble$\rightarrow$%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+setbeamersize\{text margin left=0.5cm, text margin right=0.5cm\}\bigskip
+
+\item Il est aussi possible d'ajouter un logo à vos pages. Le logo peut se
+mettre sur toutes les pages par défaut, tout comme il peut se mettre que sur
+certaines pages précises. On utilise dans ce cas la commande
+%TCIMACRO{\TeXButton{logo}{\logo{\includegraphics[height=5mm]{logo.bmp}}}}%
+%BeginExpansion
+\logo{\includegraphics[height=5mm]{logo.bmp}}%
+%EndExpansion
+:\newline%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+logo\{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+includegraphics[height=5mm]\{logo.bmp\}\}
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\section{Utilisation des colonnes}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Utilisation des colonnes et blocs}}%
+%BeginExpansion
+\frametitle{Utilisation des colonnes et blocs}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item Dans l'environnement \textbf{columns (avec un s)}, on peut créer
+plusieurs colonnes définies par un environnement \textbf{column (sans s)}.
+Voici comment disposer de blocs en 2 colonnes :
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}[1cm]}}%
+%BeginExpansion
+\begin{columns}[1cm]%
+%EndExpansion%
+%TCIMACRO{\TeXButton{Column}{\column{5cm}}}%
+%BeginExpansion
+\column{5cm}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{bloc}{\begin{block}{Bloc n°1}}}%
+%BeginExpansion
+\begin{block}{Bloc n°1}%
+%EndExpansion
+
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+1.
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+1.
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+1.
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+1.%
+
+%TCIMACRO{\TeXButton{bloc}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Column}{\column{5cm}}}%
+%BeginExpansion
+\column{5cm}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{bloc}{\begin{block}{Bloc n°2}}}%
+%BeginExpansion
+\begin{block}{Bloc n°2}%
+%EndExpansion
+
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+2.
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+2.
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+2.
+
+Texte du bloc n%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+${{}^\circ}$%
+%EndExpansion
+2.%
+
+%TCIMACRO{\TeXButton{bloc}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\section{Utilisation des couleurs}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Couleur du texte}}%
+%BeginExpansion
+\frametitle{Couleur du texte}%
+%EndExpansion
+
+
+\begin{itemize}
+\item Avec Beamer vous pouvez directement écrire la couleur que vous souhaitez
+(en anglais, bien évidemment): white\qquad gray\qquad darkgray\qquad
+lightgray\qquad black\qquad red\qquad green\qquad blue ....\bigskip
+
+\item Il est possible de colorier une portion de texte avec la commande
+\textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+textcolor} en indiquant la couleur entre accolades suivi du texte à colorier
+entre accolades aussi une nouvelle fois :\bigskip
+\end{itemize}
+
+%
+
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+textcolor\{red\}\{texte écrit en rouge\}
+%TCIMACRO{\TeXButton{textcolor}{\textcolor{red}{texte écrit en rouge}}}%
+%BeginExpansion
+\textcolor{red}{texte écrit en rouge}%
+%EndExpansion
+%
+
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+textcolor\{green\}\{texte écrit en vert\}
+%TCIMACRO{\TeXButton{textcolor}{\textcolor{green}{texte écrit en vert}}}%
+%BeginExpansion
+\textcolor{green}{texte écrit en vert}%
+%EndExpansion
+
+
+\begin{itemize}
+\item Il y a aussi possibilité de disposerer d'un fond de couleur
+rectangulaire autour de votre texte. Il s'agit ici d'utiliser la commande
+\textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+colorbox.}
+\end{itemize}
+
+%
+
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+colorbox\{red\}\{fond de texte en rouge\}%
+%TCIMACRO{\TeXButton{colorbox}{\colorbox{red}{fond de texte en rouge}}}%
+%BeginExpansion
+\colorbox{red}{fond de texte en rouge}%
+%EndExpansion
+%
+
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+colorbox\{green\}\{fond de texte en vert\}%
+%TCIMACRO{\TeXButton{colorbox}{\colorbox{green}{fond de texte en vert}}}%
+%BeginExpansion
+\colorbox{green}{fond de texte en vert}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Couleur du fond}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Couleur du fond}}%
+%BeginExpansion
+\frametitle{Couleur du fond}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item Pour donner une couleur à votre canevas on utilise la commande \textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+setbeamertemplate} à n'importe quel moment en
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+mais en SWP dans Typset$\rightarrow$Preamble$\rightarrow$%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+setbeamertemplate\{......\}\bigskip
+
+\item
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+setbeamertemplate\{background canvas\}[vertical
+shading][top=white,bottom=yellow]\bigskip
+
+\item Et enfin, sachez que vous pouvez aussi mettre une image de votre
+ordinateur avec les commandes \textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+setbeamertemplate} et \textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+includegraphics.}
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Couleur des boîtes arrondies}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Couleur des boîtes arrondies}}%
+%BeginExpansion
+\frametitle{Couleur des boîtes arrondies}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item Il est possible d'ajoutér des boite à déffirentes couleur de fond: en
+définant dans Typset$\rightarrow$Preamble$\rightarrow$ la commande:
+\end{stepitemizewithalert}
+
+\textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+beamerboxesdeclarecolorscheme\{blocbleu\}\{blue\}\{yellow\}}%
+
+%TCIMACRO{\TeXButton{beamerboxesrounded}{\begin{beamerboxesrounded}%
+%[scheme=blocbleu]{Théorème 1.1.}}}%
+%BeginExpansion
+\begin{beamerboxesrounded}[scheme=blocbleu]{Théorème 1.1.}%
+%EndExpansion
+
+
+$\hat{\theta}$ est un estimateur sans biais de $\theta.$%
+
+%TCIMACRO{\TeXButton{beamerboxesrounded}{\end{beamerboxesrounded}}}%
+%BeginExpansion
+\end{beamerboxesrounded}%
+%EndExpansion
+
+
+\textbf{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+beamerboxesdeclarecolorscheme\{bloclightgray\}\{green\}\{lightgray\}}%
+
+%TCIMACRO{\TeXButton{beamerboxesrounded}{\begin{beamerboxesrounded}%
+%[scheme=bloclightgray]{Théorème 1.2.}}}%
+%BeginExpansion
+\begin{beamerboxesrounded}[scheme=bloclightgray]{Théorème 1.2.}%
+%EndExpansion
+
+
+$\hat{\alpha}$ est un estimateur sans biais de $\alpha.$%
+
+%TCIMACRO{\TeXButton{beamerboxesrounded}{\end{beamerboxesrounded}}}%
+%BeginExpansion
+\end{beamerboxesrounded}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\section{Références}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Références}}%
+%BeginExpansion
+\frametitle{Références}%
+%EndExpansion
+
+
+\begin{thebibliography}{9}                                                                                                %
+
+
+\bibitem {}To learn more about Beamer, see SWSamples/PackageSample-beamer.tex
+in your program installation.\bigskip
+
+\bibitem {}For complete information, read the BeamerUserGuide.pdf manual
+provided with this shell.
+\end{thebibliography}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\end{document}
