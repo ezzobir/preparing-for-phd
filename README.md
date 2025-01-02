@@ -3,8 +3,8 @@
 
 رابط مجموعة الفايسبوك:
 
-[الرياضيات التطبيقية](https://www.facebook.com/groups/appliedmathematicsdz)
+[الرياضيات التطبيقية فايسبوك](https://www.facebook.com/groups/appliedmathematicsdz)
 
 رابط مجموعة التليغرام:
 
-[الرياضيات التطبيقية](https://t.me/applied_mathematics_dz)
+[الرياضيات التطبيقية تليغرام](https://t.me/applied_mathematics_dz)
